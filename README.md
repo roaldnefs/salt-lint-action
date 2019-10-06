@@ -7,20 +7,17 @@ The project is heavily based on [ansible-lint-action](https://github.com/ansible
 To use the action simply add the following lines to your `.github/workflows/main.yml`.
 
 ```yaml
-name: CI
-
 on: [push]
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
-    
+    name: Salt Lint Action Demo
     steps:
     - uses: actions/checkout@v1
     - name: Run salt-lint
       uses: roaldnefs/salt-lint-action@master
-      with:
+      env:
         ACTION_STATE_NAME: init.sls
 ```
 
