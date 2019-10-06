@@ -5,6 +5,51 @@ author: 'Roald Nefs'
 branding:
   icon: 'activity'  
   color: 'gray-dark'
+inputs:
+  version:
+    description: 'Show program's version number and exit'
+    required: false
+    default: 0
+  help:
+    description: 'Show program's version number and exit'
+    required: false
+    default: 0
+  list:
+    description: 'List all the rules'
+    required: false
+    default: "[]"
+  tags:
+    description: 'Only check rules whose id/tags match these values'
+    required: false
+    default: []
+  verbose:
+    description: "Increase verbosity level"
+    required: false
+    default: false
+  skipList:
+    description: "Only check rules whose id/tags do not match these"
+    required: false
+    default: []
+  nocolor:
+    description: "Disable colored output"
+    required: false
+    default: "false"
+  force-color:
+    description: "Try force colored output (relying on salt's code)"
+    required: false
+    default: "false"
+  exclude:
+    description: "Path to directories or files to skip. This option is repeatable"
+    required: false
+    default: []
+  configuration:
+    description: "Specify configuration file to use.  Defaults to '.salt-lint'"
+    required: false
+    default: ""
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args: [ '${{ inputs.version }}',
+          '${{ inputs.help }}',
+          '${{ inputs.list }}','${{ inputs.tags }}','${{ inputs.verbose }}', '${{ inputs.skipList }}','${{ inputs.nocolor }}', '${{ inputs.force-color }}', '${{ inputs.exclude }}',
+          '${{ inputs.configuration }}']
