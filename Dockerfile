@@ -1,13 +1,8 @@
 FROM python:3.7-stretch
 
-LABEL "maintainer"="Roald Nefs <info@roaldnefs.com"
+LABEL "maintainer"="Roald Nefs <info@roaldnefs.com>"
 LABEL "repository"="https://github.com/roaldnefs/salt-lint-action"
 LABEL "homepage"="https://github.com/roaldnefs/salt-lint-action"
-
-LABEL "com.github.actions.name"="salt-lint"
-LABEL "com.github.actions.description"="Run Salt Lint"
-LABEL "com.github.actions.icon"="activity"
-LABEL "com.github.actions.color"="gray-dark"
 
 # Update APT packages
 RUN apt-get update && apt-get upgrade -y -o DPkg::Options::=--force-confold
