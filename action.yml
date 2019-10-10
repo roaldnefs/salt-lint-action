@@ -9,27 +9,27 @@ inputs:
   version:
     description: 'Show program's version number and exit'
     required: false
-    default: 0
+    default: "false"
   help:
-    description: 'Show program's version number and exit'
+    description: 'Show the help message and exit'
     required: false
-    default: 0
+    default: "false"
   list:
     description: 'List all the rules'
     required: false
-    default: "[]"
+    default: "false"
   tags:
     description: 'Only check rules whose id/tags match these values'
     required: false
-    default: []
+    default: "[]"
   verbose:
     description: "Increase verbosity level"
     required: false
-    default: false
+    default: "false"
   skipList:
     description: "Only check rules whose id/tags do not match these"
     required: false
-    default: []
+    default: "[]"
   nocolor:
     description: "Disable colored output"
     required: false
@@ -41,11 +41,11 @@ inputs:
   exclude:
     description: "Path to directories or files to skip. This option is repeatable"
     required: false
-    default: []
+    default: "[]"
   configuration:
     description: "Specify configuration file to use.  Defaults to '.salt-lint'"
     required: false
-    default: ""
+    default: ".salt-lint"
 runs:
   using: 'docker'
   image: 'Dockerfile'
