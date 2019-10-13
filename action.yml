@@ -7,7 +7,7 @@ branding:
   color: 'gray-dark'
 inputs:
   version:
-    description: 'Show program's version number and exit'
+    description: 'Show program\'s version number and exit'
     required: false
     default: "false"
   help:

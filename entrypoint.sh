@@ -74,10 +74,22 @@ fi
 >&2 echo
 >&2 echo "==> Linting ${ACTION_STATE_PATH}…"
 
-if [ -d "${ACTION_STATE_PATH}" ]; then
-  salt-lint "${ARG_STRING}" `find "${ACTION_STATE_PATH}" -type f -name init.sls`
+if [ "${ARG_STRING}" != ""]; then
+
+  if [ -d "${ACTION_STATE_PATH}" ]; then
+    salt-lint "${ARG_STRING}" `find "${ACTION_STATE_PATH}" -type f -name init.sls`
+  else
+    salt-lint "${ARG_STRING}"  "${ACTION_STATE_PATH}"
+  fi
+
 else
-  salt-lint "${ARG_STRING}"  "${ACTION_STATE_PATH}"
+
+  if [ -d "${ACTION_STATE_PATH}" ]; then
+    salt-lint `find "${ACTION_STATE_PATH}" -type f -name init.sls`
+  else
+    salt-lint "${ACTION_STATE_PATH}"
+  fi
+
 fi
 
 >&2 echo
