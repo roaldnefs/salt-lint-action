@@ -3,7 +3,7 @@ name: 'salt-lint'
 description: 'Run Salt Lint'
 author: 'Roald Nefs'
 branding:
-  icon: 'activity'  
+  icon: 'activity'
   color: 'gray-dark'
 runs:
   using: 'docker'
