@@ -22,7 +22,7 @@ fi
 >&2 echo "==> Linting ${ACTION_STATE_PATH}…"
 
 if [ -d "${ACTION_STATE_PATH}" ]; then
-  salt-lint `find "${ACTION_STATE_PATH}" -type f -name init.sls`
+  salt-lint `find "${ACTION_STATE_PATH}" -type f -name *.sls`
 else
   salt-lint "${ACTION_STATE_PATH}"
 fi
