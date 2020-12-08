@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run salt-lint
-      uses: roaldnefs/salt-lint-action@master
+      uses: getsentry/action-salt-lint@master
       env:
         ACTION_STATE_NAME: init.sls
 ```
