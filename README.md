@@ -21,10 +21,11 @@ jobs:
         ACTION_STATE_NAME: init.sls
 ```
 
-If you want to analyse all `*.sls` files in the repository and increase logs verbosity use folowing env values istead:
+If you want to analyse all `^.*\.(sls|jinja|j2|tmpl|tst)$` files in the repository and increase logs verbosity use folowing env values istead:
 ```yaml
       env:
-        ACTION_STATE_FIND_PATTERN: '.'
+        ACTION_FIND_PATTERN: '^.*\.(sls|jinja|j2|tmpl|tst)$'
+        ACTION_FIND_TYPE: 'regex'
         SALT_LINT_EXTRA_PARAMS: '-v'
 ```
 
