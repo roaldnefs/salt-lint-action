@@ -1,4 +1,4 @@
-FROM python:3.8-buster
+FROM python:3.9-buster
 
 LABEL "maintainer"="Roald Nefs <info@roaldnefs.com>"
 LABEL "repository"="https://github.com/roaldnefs/salt-lint-action"
