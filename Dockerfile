@@ -1,4 +1,4 @@
-FROM python:3.9-buster
+FROM python:3.13-bookworm
 
 LABEL "maintainer"="Roald Nefs <info@roaldnefs.com>"
 LABEL "repository"="https://github.com/roaldnefs/salt-lint-action"
